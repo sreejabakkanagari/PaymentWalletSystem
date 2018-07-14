@@ -1,15 +1,18 @@
 package com.capgemini.dao;
 
-import com.capgemini.bean.Account;
-import com.capgemini.service.PaymentService;
+
+
+import com.capgemini.bean.WalletApplication;
+import com.capgemini.paymentwalletsystem.WalletApplicationMain;
+import com.capgemini.service.WalletApplicationService;
 
 import junit.framework.TestCase;
 
 public class PaymentDaoTest extends TestCase {
 	
-PaymentService service = new PaymentService();
+WalletApplicationService service = new WalletApplicationService();
 
-Account bean=new Account();
+WalletApplication bean=new WalletApplication();
 
 	public void testCreateAccount() {
 		
@@ -20,13 +23,13 @@ Account bean=new Account();
 
 	public void testWithdrawAmount() {
 		
-		assertEquals(5000,service.withdrawAmount(1000));
+		assertEquals(5000,service.withdraw(1000));
 		assertNotNull(bean);
 		assertTrue(true);
 	}
 
 	public void testDepositAmount() {
-		assertEquals(287,service.depositAmount(3000));
+		assertEquals(287,service.deposit(3000));
 		assertNotSame(1234,0);
 		assertNotNull(bean);
 		
@@ -35,12 +38,12 @@ Account bean=new Account();
 	public void testShowBalance() {
 		assertEquals(4000,4000);
 		assertNotSame(78,0);
-		assertEquals(400,service.showBalance(400));
+		assertEquals(400,service.showBalance());
 		assertNotNull(bean);
 	}
 
 	public void testTransferFunds() {
-		assertEquals(400,bean.getAccountnumber());
+		assertEquals(400,bean.getAccNo());
 		assertNotSame(567,0);
 		assertNotNull(bean);
 		
