@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 public class WalletApplicationValidationTest extends TestCase {
 
 	public void testIsValidFirstName() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testIsValidLastname() {
