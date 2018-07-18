@@ -10,7 +10,7 @@ import java.util.Map;
 import com.capgemini.bean.Customer;
 import com.capgemini.bean.WalletApplication;
 
-public class WalletApplicationDao implements IWalletApplicationDao {
+public  class WalletApplicationDao implements IWalletApplicationDao {
 	static boolean flag;
 	static double blnc;
 	static long tid;
@@ -26,14 +26,14 @@ public class WalletApplicationDao implements IWalletApplicationDao {
 		else
 		return 0;
 	}
-
-	public boolean login(String username, String password) {
+/*
+	public boolean login(String i, String password) {
 		
 		Iterator<WalletApplication> it =list.iterator();
 		while(it.hasNext())
 		{
 			WalletApplication app=it.next();
-			if(app.getCust().getUsername().equals(username)&&app.getCust().getPassword().equals(password))
+			if(app.getCust().getUsername().equals(i)&&app.getCust().getPassword().equals(password))
 			{
 				System.out.println("user found");
 				temp=app;
@@ -42,7 +42,7 @@ public class WalletApplicationDao implements IWalletApplicationDao {
 		}
 		return flag;
 	}
-
+*/
 	public double showBalance() {
 		blnc=temp.getAmount();
 		return blnc;
@@ -123,7 +123,7 @@ public class WalletApplicationDao implements IWalletApplicationDao {
 		return 0;
 	}
 
-	public List printTrans() {
+	public List<String> printTrans() {
 		Iterator<WalletApplication> it =list.iterator();
 		while(it.hasNext())
 		{
@@ -137,5 +137,25 @@ public class WalletApplicationDao implements IWalletApplicationDao {
 		
 		return null;
 	}
+
+	public boolean login(String username, String password) {
+		// TODO Auto-generated method stub
+		
+		Iterator<WalletApplication> it =list.iterator();
+		while(it.hasNext())
+		{
+			WalletApplication app=it.next();
+			if(app.getCust().getUsername().equals(username)&&app.getCust().getPassword().equals(password))
+			{
+				System.out.println("user found");
+				temp=app;
+				flag=true;
+			}
+		}
+		return flag;
+		
+	}
+
+	
 
 }
