@@ -1,11 +1,12 @@
 package com.capg.paymentapp.bean;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Wallet {
 	private long accountNumber;
-	private Date date;
+	private LocalDate date;
 	private  double initialBalance;
 	private long adharNumber;
 	public long getAccountNumber() {
@@ -14,11 +15,11 @@ public class Wallet {
 	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate(LocalDate localDate) {
+		this.date = localDate;
 	}
 	public double getInitialBalance() {
 		return initialBalance;
